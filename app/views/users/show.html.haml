@@ -1,7 +1,4 @@
-%p#notice= notice
-%p
-  %strong Username:
-  = @user.username
-= link_to 'Edit', edit_user_path(@user)
-|
-= link_to 'Back', users_path
+.col-xs-11.col-md-9.center-block{:style => "float:none"}
+  %h1.text-center= "#{@user.username}'s timeline"
+  #messages
+    = render :partial => @messages

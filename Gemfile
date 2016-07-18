@@ -12,14 +12,23 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'byebug'
   gem 'better_errors'
-  gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'rubocop'
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+  gem 'cucumber-rails'
 end
 
-gem "erb2haml", :group => :development
+group :test do
+  gem 'capybara'
+  gem 'capybara-webkit'
+end
 
+group :development do
+	gem 'web-console', '~> 2.0'
+end

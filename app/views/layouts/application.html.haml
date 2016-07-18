@@ -1,4 +1,3 @@
-!!!
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
@@ -10,3 +9,22 @@
   %body
     .container
       = yield
+
+:javascript
+  $("#message_message_body").bind('input propertychange', function() {
+    var mLength = parseInt($("#message_message_body").val().length);
+    var remLength = 150 - mLength;
+    var overLength = mLength - 150;
+    $("h4.remaining").text(remLength);
+    if (remLength < 0) {
+      $(".send-message").prop("disabled", true);
+      $("#error-form").removeClass("hidden").text("Your message is "+overLength+" characters too long");
+    }
+    else if (remLength == 150){
+      $(".send-message").prop("disabled", true);
+    }
+    else {
+      $("#error-form").addClass("hidden")
+      $(".send-message").prop("disabled", false);
+    }
+  });

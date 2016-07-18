@@ -1,5 +1,8 @@
 var new_message = $("<%= escape_javascript(render(:partial => @message))%>").hide();
 $('#messages').prepend(new_message);
+$('#message_<%= @message.id %> .message-block').prepend("<p class='message-alert'>New message:</p>");
 $('#message_<%= @message.id %>').fadeIn('slow');
 $('#new_message') [0].reset();
+$(".send-message").prop("disabled", true);
+$('h4.remaining').text("150");
 
