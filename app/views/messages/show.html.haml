@@ -1,0 +1,10 @@
+%p#notice= notice
+%p
+  %strong Message body:
+  = @message.message_body
+%p
+  %strong Publish date:
+  = @message.publish_date
+= link_to 'Edit', edit_message_path(@message)
+|
+= link_to 'Back', messages_path

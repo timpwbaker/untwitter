@@ -1,0 +1,5 @@
+var new_message = $("<%= escape_javascript(render(:partial => @message))%>").hide();
+$('#messages').prepend(new_message);
+$('#message_<%= @message.id %>').fadeIn('slow');
+$('#new_message') [0].reset();
+

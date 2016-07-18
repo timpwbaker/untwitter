@@ -1,0 +1,20 @@
+.col-xs-11.col-md-7.center-block{:style => "float:none"}
+  #message-form
+    = form_for(@message, remote:true) do |f|
+      - if @message.errors.any?
+        #error_explanation
+          %h2
+            = pluralize(@message.errors.count, "error")
+            prohibited this message from being saved:
+          %ul
+            - @message.errors.full_messages.each do |message|
+              %li= message
+      .field
+        = f.text_area :message_body
+      .actions
+        = f.submit "Send message", :class => "btn btn-primary"
+
+.col-xs-11.col-md-9.center-block{:style => "float:none"}
+  %h1.text-center Your timeline
+  #messages
+    = render :partial => @messages
