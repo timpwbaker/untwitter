@@ -39,6 +39,9 @@ Message
 	Message body
 	Message time
 
+Notes:
+* There is a user created by migration "add_user1_to_users" which should be removed if the application moves to having real users. 
+
 
 TD
 This application does not include user accounts. All messages are hard coded from user id 1

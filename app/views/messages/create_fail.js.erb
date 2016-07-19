@@ -1,2 +1,2 @@
-$('p#notice').text('<%= @message.errors.full_messages.each{|msg| puts msg.to_s } %>');
-$(".send-message").prop("disabled", true);
+$('p#notice').text('<%= @message.errors[:message_body].to_sentence %>');
+/*$(".send-message").prop("disabled", true);*/

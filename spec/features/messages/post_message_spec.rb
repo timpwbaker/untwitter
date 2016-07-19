@@ -13,7 +13,6 @@ feature 'Home page', :js => true do
   scenario 'visit the home page' do
   	@user = FactoryGirl.create(:user)
   	message = FactoryGirl.create(:message, user_id: @user.id)
-  	Capybara.default_max_wait_time = 5
     visit root_path
     fill_in 'message_message_body', :with => 'Sample Message'
     page.find(".send-message").click

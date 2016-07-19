@@ -21,12 +21,12 @@ group :development, :test do
   gem 'rubocop'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
-  gem 'cucumber-rails'
 end
 
 group :test do
   gem 'capybara'
   gem 'capybara-webkit'
+  gem 'cucumber-rails', :require => false
 end
 
 group :development do
