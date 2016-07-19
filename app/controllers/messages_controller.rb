@@ -31,12 +31,10 @@ class MessagesController < ApplicationController
     @message.user_id = User.first.id
     respond_to do |format|
       if @message.save
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
-        format.json { render :show, status: :created, location: @message }
+        params.delete(:message_body)
         format.js #looks for create.js.erb in the views/messages folder
       else
-        format.html { render :new }
-        format.json { render json: @message.errors, status: :unprocessable_entity }
+        format.js  { render :action => "create_fail" }
       end
     end
   end
@@ -60,8 +58,6 @@ class MessagesController < ApplicationController
   def destroy
     @message.destroy
     respond_to do |format|
-      format.html { redirect_to messages_url, notice: 'Message was successfully destroyed.' }
-      format.json { head :no_content }
       format.js #looks for destroy.js.erb in the views/messages folder
     end
   end

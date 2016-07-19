@@ -9,10 +9,19 @@
     = csrf_meta_tags
   %body
     .container
+      %p#notice= notice
       = yield
 
 :javascript
   $("#message_message_body").bind('input propertychange', function() {
+    calculate();
+  });
+
+  $(document).ready(function(){
+    calculate();
+  });
+
+  function calculate() {
     var mLength = parseInt($("#message_message_body").val().length);
     var remLength = 150 - mLength;
     var overLength = mLength - 150;
@@ -28,4 +37,4 @@
       $("#error-form").addClass("hidden")
       $(".send-message").prop("disabled", false);
     }
-  });
+  }

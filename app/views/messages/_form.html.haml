@@ -13,7 +13,7 @@
               - @message.errors.full_messages.each do |message|
                 %li= message
         .field
-          = f.text_area :message_body
+          = f.text_area :message_body, :value => params[:message_message_body]
         .col-md-6.actions.text-left
           = f.submit "Send message", :class => "btn btn-primary send-message", :disabled => true
         .col-md-6.count.text-right
