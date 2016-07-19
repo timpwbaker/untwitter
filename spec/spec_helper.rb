@@ -20,6 +20,8 @@ require 'capybara/rspec'
 RSpec.configure do |config|
 
   config.include Capybara::DSL  
+
+  # use webkit to handle JS
   Capybara.javascript_driver = :webkit
 
   # rspec-expectations config goes here. You can use an alternate

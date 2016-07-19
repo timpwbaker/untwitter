@@ -37,7 +37,7 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = false
 
-
+  # Allow Rspec to access the application routes
   config.include Rails.application.routes.url_helpers
 
 
