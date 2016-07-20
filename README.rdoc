@@ -35,9 +35,9 @@ Further details in the test files themselves.
 
 As a user:
 
-    I should be able to post a message to the timeline
-    I should be able to see all messages on the timeline
-    I should be able to delete a message from the timeline
+* I should be able to post a message to the timeline
+* I should be able to see all messages on the timeline
+* I should be able to delete a message from the timeline
 
 Root is messages#index
 
