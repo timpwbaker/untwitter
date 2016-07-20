@@ -1,5 +1,7 @@
 require 'rails_helper'
-
+# When I try to save an invalid message
+# I expect to be told why
+# So I can correct my mistake
 describe Message do
   it do
     should validate_length_of(:message_body)

@@ -1,6 +1,9 @@
 require 'rails_helper'
 describe MessagesController do
   describe 'creating a new message' do
+    # As a user
+    # When I visit Index and try to post a valid message
+    # It works
     context 'Can create message and visit index' do
       before do
         user = FactoryGirl.create(:user)
@@ -16,6 +19,9 @@ describe MessagesController do
       end
     end
 
+    # As a user
+    # When I try to post a valid message that is too long
+    # It doesn't post the message, and tells me that it is too long
     context 'message is too long' do
       it 'should not allow creation of a message and return sensible error' do
         user = FactoryGirl.create(:user)
@@ -24,6 +30,9 @@ describe MessagesController do
       end
     end
 
+    # As a user
+    # When I try to post a valid message that is too long
+    # It doesn't post the message, and tells me that it is too long
     context 'message is empty' do
       it 'should not allow creation of a message and return sensible error' do
         user = FactoryGirl.create(:user)

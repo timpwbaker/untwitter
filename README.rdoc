@@ -20,18 +20,24 @@ Done [2] Feature test: successful submission are passing - Done
 Done [2] Feature test: unsuccessful submission are passing - Done
 Done [2] Feature test: message display are passing - Done
 Done [2] Feature test: message deletion are passing - Done
-[3] Unit test: both validation rules are tested and passing
+Done [3] Unit test: both validation rules are tested and passing
 Done [2] RSpec is used - Done
 Done [2] Capybara is used - Done
-[2] shoulda-matchers is used
+Done [2] shoulda-matchers is used
 [3] README contains instructions for running application
 [3] README contains instructions for running tests
 
+==Untwitter
+
+
+<code>
 As a user:
 
     I should be able to post a message to the timeline
     I should be able to see all messages on the timeline
     I should be able to delete a message from the timeline
+</code>
+rubocop --config .rubocop_todo.yml
 
 
 Message

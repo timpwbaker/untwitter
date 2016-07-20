@@ -1,8 +1,7 @@
 require 'rails_helper'
-# Feature: Home page
-#   As a visitor
-#   I want to see my messages shown
-#   So that my friends can too
+# As a visitor
+# When I visit the homepage
+# If messages exist, I expect to see them
 feature 'Show messages', js: true do
   scenario 'Create message and view it' do
     @user = FactoryGirl.create(:user)
