@@ -136,7 +136,7 @@ Yes: The message model is tested to ensure that it validates the length of a mes
 *RSpec is used*
 Yes, see gemfile and tests format
 
-*capybara is used*
+<b>capybara is used</b>
 Yes, see gemfile and feature tests. I have used capybara-webkit to handle the JS. See above
 
 *shoulda-matchers*
