@@ -58,96 +58,92 @@ There is a user created by migration "add_user1_to_users" which should be remove
 
 *Requirements*
 
-Is the app built with rails?
+*Is the app built with rails?*
 Yes
 
-The timeline appeared on the homepage
+*The timeline appeared on the homepage*
 Yes: http://untwitter.herokuapp.com/
 
-The form appeared on the homepage
+*The form appeared on the homepage*
 Yes: http://untwitter.herokuapp.com/
 
-The form displayed error if the message is empty
+*The form displayed error if the message is empty*
 Yes, functionality can be seen at: http://untwitter.herokuapp.com/
 
-The form displayed error if the message is more than 150 characters:
-Yes, there is both client side and server side validation happening. 
-
-Client side validation gives the user a message and disables the send message button. This can be seen at: http://untwitter.herokuapp.com/?message_message_body=A%20message%20that%20is%20a%20lot%20more%20than%20150%20characters%2C%20maybe%20the%20user%20isn%27t%20being%20consice%20enough.%20Maybe%20they%27ve%20got%20a%20lot%20to%20say.%20Maybe%20the%20UX%20isn%27t%20clear%20enough.%20Who%20knows%3F%20It%20could%20be%20anything.
-
-Server side validation will need to be 'forced'. Run the following in the browser js console and submit the message
+*The form displayed error if the message is more than 150 characters*
+Yes, there is both client side and server side validation happening:
+*Client side validation gives the user a message and disables the send message button. This can be seen at: http://untwitter.herokuapp.com/?message_message_body=A%20message%20that%20is%20a%20lot%20more%20than%20150%20characters%2C%20maybe%20the%20user%20isn%27t%20being%20consice%20enough.%20Maybe%20they%27ve%20got%20a%20lot%20to%20say.%20Maybe%20the%20UX%20isn%27t%20clear%20enough.%20Who%20knows%3F%20It%20could%20be%20anything.
+*Server side validation will need to be 'forced'. Run the following in the browser js console and submit the message
     $(".send-message").prop("disabled", false);
 
-The timeline displayed message if form submitted without errors
+*The timeline displayed message if form submitted without errors*
 Yes, functionality can be seen when posting a message at: http://untwitter.herokuapp.com/
 
-The page displayed a flash message if form submitted without errors
+*The page displayed a flash message if form submitted without errors*
 Yes, functionality can be seen at: http://untwitter.herokuapp.com/
 
-The timeline appeared below the form
+*The timeline appeared below the form*
 Yes: http://untwitter.herokuapp.com/
 
-The timeline is ordered in descending chronological order
+*The timeline is ordered in descending chronological order*
 Yes: http://untwitter.herokuapp.com/
 
-Each item in the timeline contains a message
+*Each item in the timeline contains a message*
 Yes, client side and server side validation ensures that no messages are submitted without content
 
-Each item in the timeline contains the time of submission
+*Each item in the timeline contains the time of submission*
 Yes: http://untwitter.herokuapp.com/
 
-Each item in the timeline contains a delete button
+*Each item in the timeline contains a delete button*
 Yes: http://untwitter.herokuapp.com/
 
-Message can contain newlines
+*Message can contain newlines*
 Yes, functionality can be seen when posting a message with a line break at: http://untwitter.herokuapp.com/
 
-Time is displayed in format of "20 minutes ago", "5 days ago"
+*Time is displayed in format of "20 minutes ago", "5 days ago"*
 Yes: http://untwitter.herokuapp.com/
 
-Clicking delete button results in item being deleted
+*Clicking delete button results in item being deleted*
 Yes: Done via AJAX
 
-Clicking delete button results in flash message being displayed
+*Clicking delete button results in flash message being displayed*
 Yes: Again, AJAX
 
-Git was used to version control
+*Git was used to version control*
 Yes, .git included in zip and github: https://github.com/timpwbaker/untwitter
 
-Rubocop is installed and is passing
+*Rubocop is installed and is passing*
 Yes: Application comes with a Rubocop config file. To run with this config: 
     rubocop --config .rubocop_todo.yml
 
-Feature test: successful submission are passing
+*Feature test: successful submission are passing*
 Yes: Successful submission feature is found in spec/features/messages/post_message_spec.rb
 
-Feature test: unsuccessful submission are passing - Done
+*Feature test: unsuccessful submission are passing*
 Yes: Unsuccessful submission feature is found in spec/features/messages/post_message_spec.rb
 
-Feature test: message display are passing
+*Feature test: message display are passing*
 Yes: 
-	When a message is successfully posted the tests check that the new message is shown. Validated in spec/features/messages/post_message_spec.rb
-	When a user visits the index and a message exists in the database they see that message. validated in spec/features/messages/show_message_spec.rb
+*When a message is successfully posted the tests check that the new message is shown. Validated in spec/features/messages/post_message_spec.rb
+*When a user visits the index and a message exists in the database they see that message. validated in spec/features/messages/show_message_spec.rb
 
-Feature test: message deletion are passing
+*Feature test: message deletion are passing*
 Yes: When a user deletes a message the tests validate that the user is told and that the message actually disappears from the database
 
-Unit test: both validation rules are tested and passing
+*Unit test: both validation rules are tested and passing*
 Yes: The message model is tested to ensure that it validates the length of a message to ensure it is the correct length. Validated in: spec/models/message_model_spec.rb
 
-RSpec is used
+*RSpec is used*
 Yes, see gemfile and tests format
 
-Capybara is used
+*Capybara is used*
 Yes, see gemfile and feature tests. I have used capybara-webkit to handle the JS. See above
 
-shoulda-matchers
+*shoulda-matchers*
 Yes, see gemfile and message_model_spec.rb
 
-README contains instructions for running application
+*README contains instructions for running application*
 Yes, see above
 
-README contains instructions for running tests
+*README contains instructions for running tests*
 Yes, see above
-
-
