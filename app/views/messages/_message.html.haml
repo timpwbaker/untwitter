@@ -1,19 +1,17 @@
 = div_for message do 
-  .col-xs-11.col-md-7.center-block.message-block{:style => "float:none"}
-    .row
-      .col-xs-6
-        %p.text-left
-          %strong
-            = link_to "@#{message.user.username}", user_path(message.user)
-      .col-xs-6
-        %p.text-right.time 
-          = "#{time_ago_in_words(message.created_at)} ago"
-    .row
-      .col-md-10
-        %p.content 
-          =simple_format message.message_body
-      .col-md-2.text-right
-        = link_to message, method: :delete, remote:true, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger delete-message", :id => "delete-message#{message.id}" do 
-          =fa_icon "trash-o"
+  .row.message-block
+    .col-xs-6
+      %p.text-left
+        %strong
+          = link_to "@#{message.user.username}", user_path(message.user)
+    .col-xs-6
+      %p.text-right.time 
+        = "#{time_ago_in_words(message.created_at)} ago"
+  .row
+    .col-md-10
+      %p.content 
+        =simple_format message.message_body
+    .col-md-2.text-right
+      = link_to message, method: :delete, remote:true, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger delete-message", :id => "delete-message#{message.id}" do 
+        =fa_icon "trash-o"
   %hr
-      
