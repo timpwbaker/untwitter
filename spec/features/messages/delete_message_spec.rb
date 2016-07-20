@@ -9,6 +9,6 @@ feature 'Delete Messages', js: true do
     visit root_path
     page.find("#delete-message#{message.id}").click
     expect(page).to have_content('Message deleted')
-    expect{ Message.find(message.id) }.to raise_error ActiveRecord::RecordNotFound
+    expect { Message.find(message.id) }.to raise_error ActiveRecord::RecordNotFound
   end
 end

@@ -1,54 +1,153 @@
-Done [2] Is the app built with rails? - Done
-Done [2] The timeline appeared on the homepage - Done
-Done [2] The form appeared on the homepage - Done
-Done [3] The form displayed error if the message is empty - Done
-Done [3] The form displayed error if the message is more than 150 characters - Done
-Done [3] The timeline displayed message if form submitted without errors - Done
-Done [3] The page displayed a flash message if form submitted without errors - Done
-Done [2] The timeline appeared below the form - Done
-Done [3] The timeline is ordered in descending chronological order - Done
-Done [2] Each item in the timeline contains a message - Done
-Done [2] Each item in the timeline contains the time of submission - Done
-Done [2] Each item in the timeline contains a delete button - Done
-Done [3] Message can contain newlines - Done
-Done [3] Time is displayed in format of "20 minutes ago", "5 days ago" - Done
-Done [3] Clicking delete button results in item being deleted - Done
-Done [3] Clicking delete button results in flash message being displayed - Done
-Done [3] Git was used to version control - Done
-Done [3] Rubocop is installed and is passing 
-Done [2] Feature test: successful submission are passing - Done
-Done [2] Feature test: unsuccessful submission are passing - Done
-Done [2] Feature test: message display are passing - Done
-Done [2] Feature test: message deletion are passing - Done
-Done [3] Unit test: both validation rules are tested and passing
-Done [2] RSpec is used - Done
-Done [2] Capybara is used - Done
-Done [2] shoulda-matchers is used
-[3] README contains instructions for running application
-[3] README contains instructions for running tests
 
-==Untwitter
+===Untwitter
 
+=Running the application
 
-<code>
+The application is rails 4 using PG for the database. 
+
+To create the databases and the first user record (see notes below)
+
+   rake db:create
+   rake db:migrate
+   bundle (for instructions on capybara-webkit issues: https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit)
+   rails s
+
+=Running tests
+
+The tests use Rspec and Capybara
+
+Capybara uses Webkit for the JS. To install this follow these instructions: https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit
+
+Run tests with:
+    bundle exec rake
+
+Tests check for:
+* Valid message controller behaviour
+* Valid message model behaviour
+* Post message feature working correctly
+* Delete message feature working correctly
+* Show message feature working correctly
+Further details in the test files themselves.
+
+=About the application
+
+*Core user stories*
+
 As a user:
 
     I should be able to post a message to the timeline
     I should be able to see all messages on the timeline
     I should be able to delete a message from the timeline
-</code>
-rubocop --config .rubocop_todo.yml
 
+Root is messages#index
+
+User
+	has a username
+	has many messages
 
 Message
-	Belongs to user
-	Message body
-	Message time
-
-Notes:
-* There is a user created by migration "add_user1_to_users" which should be removed if the application moves to having real users. 
+	belongs to user
+	has a message body
 
 
-TD
-This application does not include user accounts. All messages are hard coded from user id 1
+=Requirements & notes
+
+*Notes*
+
+There is a user created by migration "add_user1_to_users" which should be removed if the application moves to having real users. 
+
+*Requirements*
+
+Is the app built with rails?
+Yes
+
+The timeline appeared on the homepage
+Yes: http://untwitter.herokuapp.com/
+
+The form appeared on the homepage
+Yes: http://untwitter.herokuapp.com/
+
+The form displayed error if the message is empty
+Yes, functionality can be seen at: http://untwitter.herokuapp.com/
+
+The form displayed error if the message is more than 150 characters:
+Yes, there is both client side and server side validation happening. 
+
+Client side validation gives the user a message and disables the send message button. This can be seen at: http://untwitter.herokuapp.com/?message_message_body=A%20message%20that%20is%20a%20lot%20more%20than%20150%20characters%2C%20maybe%20the%20user%20isn%27t%20being%20consice%20enough.%20Maybe%20they%27ve%20got%20a%20lot%20to%20say.%20Maybe%20the%20UX%20isn%27t%20clear%20enough.%20Who%20knows%3F%20It%20could%20be%20anything.
+
+Server side validation will need to be 'forced'. Run the following in the browser js console and submit the message
+    $(".send-message").prop("disabled", false);
+
+The timeline displayed message if form submitted without errors
+Yes, functionality can be seen when posting a message at: http://untwitter.herokuapp.com/
+
+The page displayed a flash message if form submitted without errors
+Yes, functionality can be seen at: http://untwitter.herokuapp.com/
+
+The timeline appeared below the form
+Yes: http://untwitter.herokuapp.com/
+
+The timeline is ordered in descending chronological order
+Yes: http://untwitter.herokuapp.com/
+
+Each item in the timeline contains a message
+Yes, client side and server side validation ensures that no messages are submitted without content
+
+Each item in the timeline contains the time of submission
+Yes: http://untwitter.herokuapp.com/
+
+Each item in the timeline contains a delete button
+Yes: http://untwitter.herokuapp.com/
+
+Message can contain newlines
+Yes, functionality can be seen when posting a message with a line break at: http://untwitter.herokuapp.com/
+
+Time is displayed in format of "20 minutes ago", "5 days ago"
+Yes: http://untwitter.herokuapp.com/
+
+Clicking delete button results in item being deleted
+Yes: Done via AJAX
+
+Clicking delete button results in flash message being displayed
+Yes: Again, AJAX
+
+Git was used to version control
+Yes, .git included in zip and github: https://github.com/timpwbaker/untwitter
+
+Rubocop is installed and is passing
+Yes: Application comes with a Rubocop config file. To run with this config: 
+    rubocop --config .rubocop_todo.yml
+
+Feature test: successful submission are passing
+Yes: Successful submission feature is found in spec/features/messages/post_message_spec.rb
+
+Feature test: unsuccessful submission are passing - Done
+Yes: Unsuccessful submission feature is found in spec/features/messages/post_message_spec.rb
+
+Feature test: message display are passing
+Yes: 
+	When a message is successfully posted the tests check that the new message is shown. Validated in spec/features/messages/post_message_spec.rb
+	When a user visits the index and a message exists in the database they see that message. validated in spec/features/messages/show_message_spec.rb
+
+Feature test: message deletion are passing
+Yes: When a user deletes a message the tests validate that the user is told and that the message actually disappears from the database
+
+Unit test: both validation rules are tested and passing
+Yes: The message model is tested to ensure that it validates the length of a message to ensure it is the correct length. Validated in: spec/models/message_model_spec.rb
+
+RSpec is used
+Yes, see gemfile and tests format
+
+Capybara is used
+Yes, see gemfile and feature tests. I have used capybara-webkit to handle the JS. See above
+
+shoulda-matchers
+Yes, see gemfile and message_model_spec.rb
+
+README contains instructions for running application
+Yes, see above
+
+README contains instructions for running tests
+Yes, see above
+
 
