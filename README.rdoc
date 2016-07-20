@@ -17,9 +17,9 @@
 [3] Git was used to version control - Done
 [3] Rubocop is installed and is passing 
 [2] Feature test: successful submission are passing - Done
-[2] Feature test: unsuccessful submission are passing
-[2] Feature test: message display are passing
-[2] Feature test: message deletion are passing
+[2] Feature test: unsuccessful submission are passing - Done
+[2] Feature test: message display are passing - Done
+[2] Feature test: message deletion are passing - Done
 [3] Unit test: both validation rules are tested and passing
 [2] RSpec is used
 [2] Capybara is used

@@ -27,8 +27,9 @@ group :test do
   gem 'capybara'
   gem 'capybara-webkit'
   gem 'cucumber-rails', :require => false
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 group :development do
-	gem 'web-console', '~> 2.0'
+  gem 'web-console', '~> 2.0'
 end

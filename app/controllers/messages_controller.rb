@@ -27,28 +27,14 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(message_params)
-    #hard coded user ID to be replaced in next iteration
+    # hard coded user ID to be replaced in next iteration
     @message.user_id = User.first.id
     respond_to do |format|
       if @message.save
         params.delete(:message_body)
-        format.js #looks for create.js.erb in the views/messages folder
+        format.js # looks for create.js.erb in the views/messages folder
       else
-        format.js  { render :action => "create_fail" }
-      end
-    end
-  end
-
-  # PATCH/PUT /messages/1
-  # PATCH/PUT /messages/1.json
-  def update
-    respond_to do |format|
-      if @message.update(message_params)
-        format.html { redirect_to @message, notice: 'Message was successfully updated.' }
-        format.json { render :show, status: :ok, location: @message }
-      else
-        format.html { render :edit }
-        format.json { render json: @message.errors, status: :unprocessable_entity }
+        format.js { render action: 'create_fail' }
       end
     end
   end
@@ -58,18 +44,21 @@ class MessagesController < ApplicationController
   def destroy
     @message.destroy
     respond_to do |format|
-      format.js #looks for destroy.js.erb in the views/messages folder
+      format.json { head :no_content }
+      format.js # looks for destroy.js.erb in the views/messages folder
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_message
-      @message = Message.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def message_params
-      params.require(:message).permit(:message_body, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_message
+    @message = Message.find(params[:id])
+  end
+
+  # Only allow the white list parameters through.
+  def message_params
+    params.require(:message).permit(:message_body, :user_id)
+  end
+  
 end
