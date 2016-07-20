@@ -26,7 +26,6 @@ end
 group :test do
   gem 'capybara'
   gem 'capybara-webkit'
-  gem 'cucumber-rails', require: false
   gem 'shoulda-matchers', '~> 3.1'
 end
 

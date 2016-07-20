@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 feature 'Post Messages', js: true do
+  before { FactoryGirl.build(:user) }
   # Scenario: Visit the home page and try to post messages
   #   Given I am a visitor
   #   When I visit the home page
   #   I want to be able to post a message
   scenario 'post successful message' do
-    @user = FactoryGirl.create(:user)
     visit root_path
     fill_in 'message_message_body', with: 'Sample Message'
     page.find('.send-message').click
@@ -17,7 +17,6 @@ feature 'Post Messages', js: true do
   #   When I visit the home page
   #   If I try to post an invalid message I want to be told
   scenario 'try to create a message that\'s too long' do
-    @user = FactoryGirl.create(:user)
     visit root_path
     fill_in 'message_message_body', with: 'A message that is a lot more than 150 characters, maybe the user isn\'t being consice enough. Maybe they\'ve got a lot to say. Maybe the UX isn\'t clear enough. Who knows? It could be anything.'
     page.execute_script('$(\'.send-message\').prop(\'disabled\', false);')
