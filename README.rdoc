@@ -1,28 +1,28 @@
-[2] Is the app built with rails? - Done
-[2] The timeline appeared on the homepage - Done
-[2] The form appeared on the homepage - Done
-[3] The form displayed error if the message is empty - Done
-[3] The form displayed error if the message is more than 150 characters - Done
-[3] The timeline displayed message if form submitted without errors - Done
-[3] The page displayed a flash message if form submitted without errors - Done
-[2] The timeline appeared below the form - Done
-[3] The timeline is ordered in descending chronological order - Done
-[2] Each item in the timeline contains a message - Done
-[2] Each item in the timeline contains the time of submission - Done
-[2] Each item in the timeline contains a delete button - Done
-[3] Message can contain newlines - Done
-[3] Time is displayed in format of "20 minutes ago", "5 days ago" - Done
-[3] Clicking delete button results in item being deleted - Done
-[3] Clicking delete button results in flash message being displayed - Done
-[3] Git was used to version control - Done
+Done [2] Is the app built with rails? - Done
+Done [2] The timeline appeared on the homepage - Done
+Done [2] The form appeared on the homepage - Done
+Done [3] The form displayed error if the message is empty - Done
+Done [3] The form displayed error if the message is more than 150 characters - Done
+Done [3] The timeline displayed message if form submitted without errors - Done
+Done [3] The page displayed a flash message if form submitted without errors - Done
+Done [2] The timeline appeared below the form - Done
+Done [3] The timeline is ordered in descending chronological order - Done
+Done [2] Each item in the timeline contains a message - Done
+Done [2] Each item in the timeline contains the time of submission - Done
+Done [2] Each item in the timeline contains a delete button - Done
+Done [3] Message can contain newlines - Done
+Done [3] Time is displayed in format of "20 minutes ago", "5 days ago" - Done
+Done [3] Clicking delete button results in item being deleted - Done
+Done [3] Clicking delete button results in flash message being displayed - Done
+Done [3] Git was used to version control - Done
 [3] Rubocop is installed and is passing 
-[2] Feature test: successful submission are passing - Done
-[2] Feature test: unsuccessful submission are passing - Done
-[2] Feature test: message display are passing - Done
-[2] Feature test: message deletion are passing - Done
+Done [2] Feature test: successful submission are passing - Done
+Done [2] Feature test: unsuccessful submission are passing - Done
+Done [2] Feature test: message display are passing - Done
+Done [2] Feature test: message deletion are passing - Done
 [3] Unit test: both validation rules are tested and passing
-[2] RSpec is used
-[2] Capybara is used
+Done [2] RSpec is used - Done
+Done [2] Capybara is used - Done
 [2] shoulda-matchers is used
 [3] README contains instructions for running application
 [3] README contains instructions for running tests
