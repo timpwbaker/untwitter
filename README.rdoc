@@ -134,16 +134,21 @@ Yes: When a user deletes a message the tests validate that the user is told and 
 Yes: The message model is tested to ensure that it validates the length of a message to ensure it is the correct length. Validated in: spec/models/message_model_spec.rb
 
 <b>RSpec is used</b>
- Yes, see gemfile and tests format
+
+Yes, see gemfile and tests format
 
 <b>capybara is used</b>
- Yes, see gemfile and feature tests. I have used capybara-webkit to handle the JS. See above
+
+Yes, see gemfile and feature tests. I have used capybara-webkit to handle the JS. See above
 
 <b>shoulda-matchers</b>
- Yes, see gemfile and message_model_spec.rb
+
+Yes, see gemfile and message_model_spec.rb
 
 <b>README contains instructions for running application</b>
+
 Yes, see above
 
 <b>README contains instructions for running tests</b>
+
 Yes, see above
