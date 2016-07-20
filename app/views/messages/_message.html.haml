@@ -1,11 +1,11 @@
 = div_for message do 
   .col-xs-11.col-md-7.center-block.message-block{:style => "float:none"}
     .row
-      .col-xs-9.col-md-6
+      .col-xs-6
         %p.text-left
           %strong
             = link_to "@#{message.user.username}", user_path(message.user)
-      .col-xs-3.col-md-6
+      .col-xs-6
         %p.text-right.time 
           = "#{time_ago_in_words(message.created_at)} ago"
     .row
