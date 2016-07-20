@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :user do
-    username "timpwbaker"
+    username 'timpwbaker'
   end
 end

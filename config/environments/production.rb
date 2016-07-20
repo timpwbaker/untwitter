@@ -31,8 +31,8 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
 
-  # Asset digests allow you to set far-future HTTP expiration dates on all assets,
-  # yet still be able to expire them through the digest params.
+  # Asset digests allow you to set far-future HTTP expiration dates on all
+  # assets,  still be able to expire them through the digest params.
   config.assets.digest = true
 
   # `config.assets.precompile` has moved to config/initializers/assets.rb
@@ -63,7 +63,8 @@ Rails.application.configure do
   # config.action_controller.asset_host = 'http://assets.example.com'
 
   # Ignore bad email addresses and do not raise email delivery errors.
-  # Set to true & configure email server for immediate delivery & delivery errors.
+  # Set to true & configure email server for immediate delivery &
+  # delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to

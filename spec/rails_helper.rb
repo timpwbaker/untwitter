@@ -2,7 +2,9 @@
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
-abort("The Rails environment is running in production mode!") if Rails.env.production?
+if Rails.env.production?
+  abort('The Rails environment is running in production mode!')
+end
 require 'rspec/rails'
 require 'spec_helper'
 require 'capybara-webkit'
@@ -39,7 +41,6 @@ RSpec.configure do |config|
 
   # Allow Rspec to access the application routes
   config.include Rails.application.routes.url_helpers
-
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
