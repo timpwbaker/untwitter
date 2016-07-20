@@ -52,11 +52,11 @@ Message
 
 =Requirements & notes
 
-<b><u>Notes</u></b>
+<b>Notes</b>
 
 There is a user created by migration "add_user1_to_users" which should be removed if the application moves to having real users. 
 
-<b><u>Requirements</u></b>
+<b>Requirements</b>
 
 <b>Is the app built with rails?</b>
 
