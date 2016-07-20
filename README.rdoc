@@ -52,85 +52,108 @@ Message
 
 =Requirements & notes
 
-<b>Notes</b>
+<b><u>Notes</u></b>
 
 There is a user created by migration "add_user1_to_users" which should be removed if the application moves to having real users. 
 
-<b>Requirements</b>
+<b><u>Requirements</u></b>
 
 <b>Is the app built with rails?</b>
+
 Yes
 
 <b>The timeline appeared on the homepage</b>
+
 Yes: http://untwitter.herokuapp.com/
 
 <b>The form appeared on the homepage</b>
+
 Yes: http://untwitter.herokuapp.com/
 
 <b>The form displayed error if the message is empty</b>
+
 Yes, functionality can be seen at: http://untwitter.herokuapp.com/
 
 <b>The form displayed error if the message is more than 150 characters</b>
+
 Yes, there is both client side and server side validation happening:
 * Client side validation gives the user a message and disables the send message button. This can be seen at: http://untwitter.herokuapp.com/?message_message_body=A%20message%20that%20is%20a%20lot%20more%20than%20150%20characters%2C%20maybe%20the%20user%20isn%27t%20being%20consice%20enough.%20Maybe%20they%27ve%20got%20a%20lot%20to%20say.%20Maybe%20the%20UX%20isn%27t%20clear%20enough.%20Who%20knows%3F%20It%20could%20be%20anything.
 * Server side validation will need to be 'forced'. Run the following in the browser js console and submit the message
     $(".send-message").prop("disabled", false);
 
 <b>The timeline displayed message if form submitted without errors</b>
+
 Yes, functionality can be seen when posting a message at: http://untwitter.herokuapp.com/
 
 <b>The page displayed a flash message if form submitted without errors</b>
+
 Yes, functionality can be seen at: http://untwitter.herokuapp.com/
 
 <b>The timeline appeared below the form</b>
+
 Yes: http://untwitter.herokuapp.com/
 
 <b>The timeline is ordered in descending chronological order</b>
+
 Yes: http://untwitter.herokuapp.com/
 
 <b>Each item in the timeline contains a message</b>
+
 Yes, client side and server side validation ensures that no messages are submitted without content
 
 <b>Each item in the timeline contains the time of submission</b>
+
 Yes: http://untwitter.herokuapp.com/
 
 <b>Each item in the timeline contains a delete button</b>
+
 Yes: http://untwitter.herokuapp.com/
 
 <b>Message can contain newlines</b>
+
 Yes, functionality can be seen when posting a message with a line break at: http://untwitter.herokuapp.com/
 
 <b>Time is displayed in format of "20 minutes ago", "5 days ago"</b>
+
 Yes: http://untwitter.herokuapp.com/
 
 <b>Clicking delete button results in item being deleted</b>
+
 Yes: Done via AJAX
 
 <b>Clicking delete button results in flash message being displayed</b>
+
 Yes: Again, AJAX
 
 <b>Git was used to version control</b>
+
 Yes, .git included in zip and github: https://github.com/timpwbaker/untwitter
 
 <b>Rubocop is installed and is passing</b>
+
 Yes: Application comes with a Rubocop config file. To run with this config: 
     rubocop --config .rubocop_todo.yml
 
 <b>Feature test: successful submission are passing</b>
+
 Yes: Successful submission feature is found in spec/features/messages/post_message_spec.rb
 
 <b>Feature test: unsuccessful submission are passing</b>
+
 Yes: Unsuccessful submission feature is found in spec/features/messages/post_message_spec.rb
 
 <b>Feature test: message display are passing</b>
+
 Yes: 
 * When a message is successfully posted the tests check that the new message is shown. Validated in spec/features/messages/post_message_spec.rb
 * When a user visits the index and a message exists in the database they see that message. validated in spec/features/messages/show_message_spec.rb
 
 <b>Feature test: message deletion are passing</b>
+
 Yes: When a user deletes a message the tests validate that the user is told and that the message actually disappears from the database
 
 <b>Unit test: both validation rules are tested and passing</b>
+
 Yes: The message model is tested to ensure that it validates the length of a message to ensure it is the correct length. Validated in: spec/models/message_model_spec.rb
 
 <b>RSpec is used</b>
