@@ -124,8 +124,8 @@ Yes: Unsuccessful submission feature is found in spec/features/messages/post_mes
 
 *Feature test: message display are passing*
 Yes: 
-*When a message is successfully posted the tests check that the new message is shown. Validated in spec/features/messages/post_message_spec.rb
-*When a user visits the index and a message exists in the database they see that message. validated in spec/features/messages/show_message_spec.rb
+* When a message is successfully posted the tests check that the new message is shown. Validated in spec/features/messages/post_message_spec.rb
+* When a user visits the index and a message exists in the database they see that message. validated in spec/features/messages/show_message_spec.rb
 
 *Feature test: message deletion are passing*
 Yes: When a user deletes a message the tests validate that the user is told and that the message actually disappears from the database
