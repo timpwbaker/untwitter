@@ -3,12 +3,17 @@
 
 =Running the application
 
-The application is rails 4 using PG for the database. 
+The running application can be found here: http://untwitter.herokuapp.com/
+
+The application is rails 4 using PG for the database. It's currently based around the index page which lists all messages. User profile pages exist (click a user's username in the timeline)
 
 To create the databases and the first user record (see notes below)
 
    rake db:create
    rake db:migrate
+
+Bundle and run the server
+
    bundle (for instructions on capybara-webkit issues: https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit)
    rails s
 
