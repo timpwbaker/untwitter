@@ -132,7 +132,7 @@ Yes, .git included in zip and github: https://github.com/timpwbaker/untwitter
 <b>Rubocop is installed and is passing</b>
 
 Yes: Application comes with a Rubocop config file. To run with this config: 
-    rubocop --config .rubocop_todo.yml
+    $ rubocop --config .rubocop_todo.yml
 
 <b>Feature test: successful submission are passing</b>
 
