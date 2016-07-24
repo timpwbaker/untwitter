@@ -32,6 +32,7 @@ class MessagesController < ApplicationController
     respond_to do |format|
       if @message.save
         params.delete(:message_body)
+        format.json { render :index, status: :created}
         format.js # looks for create.js.erb in the views/messages folder
       else
         format.js { render action: 'create_fail' }

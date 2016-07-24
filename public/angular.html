@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="untwitter-app.js"></script>
+    <link rel="stylesheet" media="all" href="/assets/application.self-b240d27a4d4a835c575cdb54589305df51743aa2a50d687709dd20fd6c1f4e3a.css?body=1" />
+
+</head>
+
+<body ng-app="untwitterApp">
+    <div ng-controller="MessagesController as mc">
+        <div class="row">
+            <div class="col-xs-11 col-md-7 center-block" style="float:none">
+                <div ng-show="!mc.new_message || mc.new_message.length<1">You must enter at least 1 character to send a message</div>
+                <div ng-show="mc.new_message.length>150">Your message is {{mc.new_message.length - 150}} characters too long</div>
+                <div id="message-form">
+                    <form class="new_message" id="new_message" action="/messages" accept-charset="UTF-8" data-remote="true" method="post">
+                        <input name="utf8" type="hidden" value="✓">
+                        <div class="field">
+                            <textarea ng-model="mc.new_message" 
+                            ng-class="{'invalid-message' : (!mc.new_message || mc.new_message.length<1 || mc.new_message.length>150) }"></textarea>
+                        </div>
+                        <div class="col-md-6 actions text-left">
+                            <input value="Send message" class="btn btn-primary send-message" ng-click="mc.postMessage()"
+                            ng-disabled="!mc.new_message || mc.new_message.length<1 || mc.new_message.length>150">
+                        </div>
+                        <div class="col-md-6 count text-right">
+                            <h4 class="remaining">{{150 - mc.new_message.length}}</h4>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <input type="text" ng-model="search" placeholder="Enter search...">
+        <ul>
+            <li ng-repeat="message in mc.messages | filter:search ">
+                {{message.message_body}}
+                <span style="color:gray">{{message.id}}</span>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
