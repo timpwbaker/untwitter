@@ -1,6 +1,7 @@
 .row
   .col-xs-11.col-md-7.center-block{:style => "float:none"}
-    #error-form.hidden
+    #error-box
+      #error-form.hidden
 
     #message-form
       = form_for(@message, remote:true) do |f|
@@ -18,3 +19,5 @@
           = f.submit "Send message", :class => "btn btn-primary send-message", :disabled => true
         .col-md-6.count.text-right
           %h4.remaining="150"
+
+= javascript_include_tag 'message_form_validation'
